@@ -1,0 +1,30 @@
+import random
+
+def user():
+  choose=input("enter you choice :\t").lower()
+  while choose not in ["head" , "tail"] :
+    choose = input ("the input is invalid give the choice again :\t")
+  return choose
+
+def computer():
+    choices = ["tail", "head"]
+    return random.choice(choices)
+
+def main():
+    print("......The Toss Decides The END.....\t")
+    while True:
+       use = user()
+       com = computer()
+       print(f"IT'S A {com} \t")
+       if use == com :
+         print("You won the toss")
+         break
+
+       dec = input("do you wanna toss again :").lower().strip()
+       if dec != 'y':
+         print ("DONE!!")
+         break
+
+
+if __name__ == "__main__":
+    main()
